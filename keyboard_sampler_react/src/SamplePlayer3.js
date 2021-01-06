@@ -6,31 +6,22 @@ import './App.css'
 
 const URL = "https://s3.amazonaws.com/freecodecamp/drums/";
 const SOUNDFILE_NAMES_AND_KEYS = {
-  Q : "Heater-1",
-  W : "Kick_n_Hat",
-  E : "Chord_1",
-  A : "Heater-6",
-  S : "punchy_kick_1", 
-  D : "Brk_Snr",
-  Z : "Dry_Ohh",
-  X : "Heater-3",
-  C : "Dsc_Oh"
+
+  Space : "Kick_n_Hat",
+ 
+  Enter : "Brk_Snr",
+
 }
 
 // This is to pass the last test.
 const KEYCODES = {
-  81 : 'Q',
-  87 : 'W',
-  69 : 'E',
-  65 : 'A',
-  83 : 'S',
-  68 : 'D',
-  90 : 'Z',
-  88 : 'X',
-  67 : 'C'
+  
+  32 : 'Space',
+  13 : 'Enter',
+
 };
 
-class SamplePlayer extends React.Component {
+class SamplePlayer3 extends React.Component {
   constructor(props){
     super();
     this.state = { 
@@ -110,4 +101,4 @@ function SamplerMachine(props) {
   )
 }
 
-export default SamplePlayer
+export default SamplePlayer3

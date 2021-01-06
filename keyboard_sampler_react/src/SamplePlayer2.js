@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import './App.css'
 
 //below is the sampler engine sript. This took quite a bit of time to set up. Take care to not screw it up!
@@ -6,31 +6,31 @@ import './App.css'
 
 const URL = "https://s3.amazonaws.com/freecodecamp/drums/";
 const SOUNDFILE_NAMES_AND_KEYS = {
-  Q : "Heater-1",
-  W : "Kick_n_Hat",
-  E : "Chord_1",
-  A : "Heater-6",
-  S : "punchy_kick_1", 
-  D : "Brk_Snr",
-  Z : "Dry_Ohh",
-  X : "Heater-3",
-  C : "Dsc_Oh"
+  7 : "Heater-1",
+  8 : "Kick_n_Hat",
+  9 : "Chord_1",
+  4 : "Heater-6",
+  5 : "punchy_kick_1", 
+  6 : "Brk_Snr",
+  1 : "Dry_Ohh",
+  2 : "Heater-3",
+  3 : "Dsc_Oh"
 }
 
 // This is to pass the last test.
 const KEYCODES = {
-  81 : 'Q',
-  87 : 'W',
-  69 : 'E',
-  65 : 'A',
-  83 : 'S',
-  68 : 'D',
-  90 : 'Z',
-  88 : 'X',
-  67 : 'C'
+  103 : '7',
+  104 : '8',
+  105 : '9',
+  100 : '4',
+  101 : '5',
+  102 : '6',
+  97 : '1',
+  98 : '2',
+  99 : '3'
 };
 
-class SamplePlayer extends React.Component {
+class SamplePlayer2 extends React.Component {
   constructor(props){
     super();
     this.state = { 
@@ -110,4 +110,4 @@ function SamplerMachine(props) {
   )
 }
 
-export default SamplePlayer
+export default SamplePlayer2

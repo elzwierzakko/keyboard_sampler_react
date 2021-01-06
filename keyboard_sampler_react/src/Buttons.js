@@ -1,5 +1,10 @@
-import React, { useState } from "react";
+import React, { Component, useState } from "react";
 import './App.css';
+import {
+    BrowserRouter as Router,
+    Link
+  } from "react-router-dom";
+import PageInfo from "./PageInfo"
 
 
 const Buttons = () => {
@@ -15,17 +20,22 @@ const Buttons = () => {
     return (
       <>
         <div className="youtube-info-container">
-                    
+
             <div className="app-info" onClick={toggleInfo}>
             </div>
 
             <div className="change-preset"> 
-
+            <Link to="/">PRESET 1</Link>
+            </div>
+            <div className="change-preset"> 
+            <Link to="/Preset2">PRESET 2</Link>
+            </div>
+            <div className="change-preset"> 
+            <Link to="/Preset3">PRESET 3</Link>
             </div>
             </div>
-
         
-  
+      
         {/* end of menu element */}
   
         {/* below will display content depending on what element will be clicked. */}
@@ -33,6 +43,7 @@ const Buttons = () => {
         <div
           className={`${infoState === false ? "details_container" : "no_display"}`}
         >        
+        
         {/*below is default content. Will be displayed at start.*/}
         
             <h1>PRESS THE MAPPED KEYS TO PLAY SAMPLES</h1>
@@ -56,47 +67,7 @@ const Buttons = () => {
         <div
           className={`${infoState === true ? "page_info_container" : "no_display"}`}
         >
-          <h1>APP INFO</h1>
-          <p class="info">
-        Zwierzaks keyboard sampler was developed by Arkadiusz Smolińśki for the sole purpose of completing
-        a FRONT END REACT developer course at CODERS LAB. <div class="space"></div>
-        If however you by some chance come across this application,
-        feel free to use it as you see fit.<div class="space"></div>
-        It is possible to use the tool as footswith connected to a bluetooth column for live preformances. <div class="space"></div>
-        To change bettween pressets press the arrow icon seen to far right of the APP.<div class="space"></div>
-        If you have any questions or feedback, feel free to contact me at:<div class="space"></div>
-
-        <div>
-            <p class="info">
-                          
-              <form
-                action="mailto:el.zwierzakko@gmail.com"
-                method="post"
-                encType="text/plain"
-              >
-                <input
-                  type="submit"
-                  className="send button"
-                  value="el.zwierzakko at gmail.com"
-                ></input>
-              </form>
-
-            </p>
-          </div>
-
-        </p>
-        <p class="info">
-        Below you will find a video tutorial on the features and potential uses of the sampler.
-        
-        </p>
-
-        <div class="info video">
-        
-        <iframe width="80%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-        </div>
-
-            
+          <PageInfo/>
         </div>
       </>
     );
@@ -104,18 +75,3 @@ const Buttons = () => {
 };
 
 export default Buttons
-
-
-// <div class="youtube">
-// </div>
-
-// <div class="app-info">
-// </div>
-
-
-// <div class="change-preset">
-// </div>
-
-// </div>
-// <Buttons></Buttons>
-// </div>

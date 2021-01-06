@@ -56,7 +56,7 @@ input {
   opacity: 0.8;
 }
 
-h1 {
+h1, a {
   display: block;
   margin: 20px;
   text-align: center;
@@ -216,11 +216,10 @@ form {
   border: 2px solid rgb(255, 255, 255);
 }
 
-.app-info:before,
-.change-preset:before {
+.app-info:before {
   content: "";
   display: block;
-  position: relative;
+  position: absolute;
   width: 0px;
   border-top: 40px solid #d1d1cd;
   border-right: 40px solid transparent;
@@ -229,7 +228,7 @@ form {
 /* This cute selector refferes to the email form wrapper. */
 
 body > div > div.page_info_container > p:nth-child(2) > div:nth-child(6) > p,
-body > div > div.page_info_container > div {
+body > div > div.page_info_container > div > div {
   background-color: #6b5b95;
   border-radius: 16px;
   border: 4px solid rgba(28, 24, 20, 0.8);
@@ -238,11 +237,41 @@ body > div > div.page_info_container > div {
 
 .app-info {
   background-image: url("./res/InfoLogo.png");
+  padding: 15px;
 }
 
 .change-preset {
-  background-image: url("./res/RefreshLogo.png");
+  max-height: 100px;
+  box-sizing: content-box;
+  padding: 15px;
 }
+
+body > div > div.youtube-info-container > div:nth-child(2):hover {
+  background-color: #6b5b95;
+}
+
+body > div > div.youtube-info-container > div:nth-child(3):hover {
+  background-color: #bd8730;
+}
+
+body > div > div.youtube-info-container > div:nth-child(4):hover {
+  background-color: #5e8a30;
+}
+
+body > div > div.youtube-info-container > div:nth-child(2):hover > a,
+body > div > div.youtube-info-container > div:nth-child(3):hover > a,
+body > div > div.youtube-info-container > div:nth-child(4):hover > a {
+ color: #d1d1cd;
+text-shadow: none;
+font-weight: bold;
+}
+
+a {
+ text-decoration: none;
+ text-align: center;
+ margin-top: 20px;
+}
+
 
 .no_display {
   display: none;

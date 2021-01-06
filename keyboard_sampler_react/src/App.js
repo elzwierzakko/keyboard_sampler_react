@@ -1,41 +1,45 @@
-import React, { Component, useState } from "react";
-import Buttons from "./Buttons"
+import React from "react";
 import './App.css';
-import SamplePlayer from "./SamplePlayer"
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+import Main from "./Main"
+import Preset2 from "./Preset2"
+import Preset3 from "./Preset3"
 
 function App() {
-  return (
-    <div className="App">
-      
-    <body>
-    
-        <div class="container">
-            
-            <div class="crow">
-                <h1>Zwierzaks Keyboard Sampler</h1>
-            
-            <div class="keyboard-leayout"></div>
-
-            <ul class="sample-listing">
-            
-            <li class="sampler-main">
+    return (
+      <Router>
+        <div>
+         
+                <Link to="/" style={{display: "none"}}></Link>
               
-                <SamplePlayer/>
+                <Link to="/Preset2" style={{display: "none"}}></Link>
+              
+                <Link to="/Preset3" style={{display: "none"}}></Link>
 
-            </li>
 
-            </ul>
+  
+          {/* A <Switch> looks through its children <Route>s and
+              renders the first one that matches the current URL. */}
+
+          <Switch>
+          <Route exact path="/">
+              <Main />
+            </Route>
+            <Route path="/preset2">
+              <Preset2 />
+            </Route>
+            <Route path="/preset3">
+              <Preset3 />
+            </Route>
+          </Switch>
         </div>
-
-
-    <Buttons/>
-
-    </div>
-    </body>
-
-</div>    
-
-  );
-}
-
-export default App;
+      </Router>
+    );
+  }
+  
+export default App
