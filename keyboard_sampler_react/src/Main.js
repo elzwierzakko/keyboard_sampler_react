@@ -3,11 +3,10 @@ import './App.css';
 import SamplePlayer from "./SamplePlayer"
 import {
     BrowserRouter as Router,
-
     Link
   } from "react-router-dom";
   import PageInfo from "./PageInfo";
-  import KeyboardPreset1 from "./res/keyboardBlack.jpg"
+  import KeyboardPreset1 from "./res/keyboardPreset1.jpg"
   
 function Main() {
 

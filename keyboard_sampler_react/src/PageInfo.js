@@ -1,15 +1,6 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import './App.css';
-import SamplePlayer from "./SamplePlayer"
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
-import Main from "./Main"
-import Preset2 from "./Preset2"
-import Preset3 from "./Preset3"
+
 
 function PageInfo() {
     return (
@@ -35,7 +26,7 @@ function PageInfo() {
                 <input
                   type="submit"
                   className="send button"
-                  value="el.zwierzakko at gmail.com"
+                  value="el.zwierzakko@gmail.com"
                 ></input>
               </form>
 

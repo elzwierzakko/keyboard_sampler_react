@@ -7,6 +7,7 @@ import {
     Link
   } from "react-router-dom";
   import PageInfo from "./PageInfo";
+  import KeyboardPreset2 from "./res/keyboardPreset2.jpg"
   
 function Preset2() {
   const [infoState, infoChange] = useState(false);
@@ -88,7 +89,9 @@ function Preset2() {
           Otherwise "No Sample" message will be displayed.
         </p>
 
-        <div id="color" className="color" style={{backgroundColor: "#bd8730"}}></div>
+        <div id="color" className="color">
+        <img src={KeyboardPreset2} alt="Keyboard layout for PRESET 2"></img>
+        </div>
       </div>
 
       {/* <!-- page info below --> */}
