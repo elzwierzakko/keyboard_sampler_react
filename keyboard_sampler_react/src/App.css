@@ -47,6 +47,8 @@ input {
   font-family: "Courier New", Courier, monospace;
 }
 
+
+
 .container {
   max-height: 100vh;
   display: flex;
@@ -67,9 +69,10 @@ h1, a {
   border-bottom: 2px solid rgba(0, 0, 0, 0.5);
 }
 
+
 .crow {
   width: 500px;
-  min-height: 600px;
+  min-height: 700px;
   display: flex;
   flex-direction: column;
   float: left;
@@ -97,7 +100,7 @@ h1, a {
 
 .sample-icon:hover,
 input:hover {
-  background-color: #4d406b;
+  background-color: rgba(75, 71, 67, 0.5);
   cursor: pointer;
 }
 
@@ -134,12 +137,13 @@ li {
   font-weight: bold;
   background-color: rgba(28, 24, 20, 0.8);
   border-radius: 16px;
+  transition: 0.3s;
 }
 
 .details_container,
 .page_info_container {
   text-align: justify;
-  max-height: 600px;
+  height: 700px;
   width: 500px;
   display: flex;
   flex-direction: column;
@@ -169,28 +173,70 @@ form {
   text-align: center;
 }
 
+/* This selector is for the arrow before the email form. */
+form::before {
+  content: "";
+  display: inline;
+  position: relative;
+  right: 20px;
+  width: 0px;
+  width: 0; 
+  height: 0; 
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;  
+  border-left: 20px solid #d1d1cd;
+  transition: 0.3s;
+}
+
+form::after {
+  content: "";
+  display: inline;
+  position: relative;
+  left: 20px;
+  width: 0px;
+  width: 0; 
+  height: 0; 
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;  
+  border-right: 20px solid #d1d1cd;
+  transition: 0.3s;
+}
+
+form:hover:after {
+  border-right: 20px solid rgba(28, 24, 20, 0.8);
+}
+
+form:hover:before {
+  border-left: 20px solid rgba(28, 24, 20, 0.8);
+} 
+
 .space {
   display: block;
   margin: 10px;
 }
 
+/* Note that this class is also changed by REACT in SamplePlayer/1/2 ect. 
+the color changes with the presests. */
+
 .color {
-  height: 300px;
-  margin: 20px;
+  max-height: 300px;
+  margin: 10px;
   background-color: #6b5b95;
-  background-image: url("../src/res/keyboard\ qweasdzxc.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 90%;
-  border-radius: 16px;
+  border-radius: 10px;
   border: 4px solid rgba(28, 24, 20, 0.8);
   text-align: center;
-  padding: 20%;
+  padding: 30px;
   font-weight: bold;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid rgba(28, 24, 20, 0.8);
+}
+
 .youtube-info-container {
-  min-height: 600px;
+  min-height: 700px;
   margin: 20px;
   display: flex;
   flex-direction: column;
@@ -208,12 +254,15 @@ form {
   border: 2px solid rgba(0, 0, 0, 0.5);
   box-shadow: 4px 4px rgba(0, 0, 0, 0.5);
   overflow: overlay;
+  transition: 0.3s;
 }
 
 .app-info:hover,
 .change-preset:hover {
   cursor: pointer;
   border: 2px solid rgb(255, 255, 255);
+  background-color: rgb(170, 170, 170);
+  background-size: 60%;
 }
 
 .app-info:before {
@@ -223,14 +272,22 @@ form {
   width: 0px;
   border-top: 40px solid #d1d1cd;
   border-right: 40px solid transparent;
+  transition: 0.3s;
 }
 
-/* This cute selector refferes to the email form wrapper. */
+.app-info:hover {
+  border-radius: 0 0 0 16px;
+}
+
+.app-info:hover:before {
+  border-top: 40px solid #444443;
+}
+
+/* This cute selector refferes to the video wrapper. */
 
 body > div > div.page_info_container > p:nth-child(2) > div:nth-child(6) > p,
 body > div > div.page_info_container > div > div {
   background-color: #6b5b95;
-  border-radius: 16px;
   border: 4px solid rgba(28, 24, 20, 0.8);
   text-align: center;
 }
@@ -248,20 +305,24 @@ body > div > div.page_info_container > div > div {
 
 body > div > div.youtube-info-container > div:nth-child(2):hover {
   background-color: #6b5b95;
+  border-radius: 16px 0 0 0;
 }
 
 body > div > div.youtube-info-container > div:nth-child(3):hover {
   background-color: #bd8730;
+  border-radius: 0 16px 0 0;
 }
 
 body > div > div.youtube-info-container > div:nth-child(4):hover {
   background-color: #5e8a30;
+  border-radius: 0 0 16px 0;
 }
 
+/* below are the preset Router links. */
 body > div > div.youtube-info-container > div:nth-child(2):hover > a,
 body > div > div.youtube-info-container > div:nth-child(3):hover > a,
 body > div > div.youtube-info-container > div:nth-child(4):hover > a {
- color: #d1d1cd;
+ /* color: #d1d1cd; */
 text-shadow: none;
 font-weight: bold;
 }
@@ -270,11 +331,27 @@ a {
  text-decoration: none;
  text-align: center;
  margin-top: 20px;
+ text-shadow: none;
+ font-weight: bold;
+ border-radius: 0 16px 0 16px;
+ transition: 0.3s;
+}
+
+a:hover {
+  border-radius: 16px 0 16px 0;
+  border-left: 2px solid rgba(0, 0, 0, 0.5);
+  border-right: 2px solid rgba(0, 0, 0, 0.5);
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
 }
 
 
 .no_display {
   display: none;
+}
+
+.local-samples > .sample-icon {
+ width: 90%;
 }
 
 @media only screen and (max-width: 760px) {
